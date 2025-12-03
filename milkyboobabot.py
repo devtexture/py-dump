@@ -77,9 +77,9 @@ def start(message):
 
             bot.send_message(message.from_user.id, text);
         else:
-            bot.send_message(message.from_user.id, 'затупок ебанный два аругмента здесь два');
+            bot.send_message(message.from_user.id, 'должно быть два аргумента');
     else:
-        bot.send_message(message.from_user.id, 'пошел нахуй неизвестная команда ебанный в рот');
+        bot.send_message(message.from_user.id, 'Неизвестная команда');
 
 bot.polling();
 

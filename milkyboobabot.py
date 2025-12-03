@@ -18,7 +18,7 @@ def getattachment(name):
                 items[name_ru] = id;
         return True, items;
     else:
-        return False, 'меня послали нахуй, с моим запросом =)'
+        return False, 'e'
 
 def canattach(name, wep):
     result = getattachment(name);
@@ -41,7 +41,7 @@ def canattach(name, wep):
                 if (wep.lower() in name_ru.lower() or wep.lower() in name_en.lower()) and name not in suitables:
                     suitables[name] = True
         else:
-            return False, 'меня послали нахуй, с моим запросом =)'
+            return False, 'Не удалось получить ответ от вики'
 
     return result, suitables
 
@@ -57,8 +57,7 @@ def start(message):
 
     if message.text.startswith('/suitable'):
         if len(args) >= 2:
-            bot.send_message(message.from_user.id, 'ща чекну');
-            print(args)
+            bot.send_message(message.from_user.id, 'Проверяю');
 
             result = canattach(args[0], args[1])
             if len(result) <= 1:
